@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #f7f7f7;
+  font-family: "Lato", sans-serif;
+  margin: 0;
+}
+button {
+  cursor: pointer;
+}
+button:focus,
+input:focus {
+  outline: none;
+}
+header {
+  background-image: url(music.jpg);
+  background-repeat: none;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  position: relative;
+}
+header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+header * {
+  z-index: 1;
+}
+form {
+  position: relative;
+  width: 450px;
+  max-width: 100%;
+}
+form input {
+  border: 0;
+  border-radius: 50px;
+  font-size: 16px;
+  padding: 10px 20px;
+  width: 100%;
+  border: 2px solid #098fe0;
+}
+form button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #ffe400;
+  border: 2px solid #00d277;
+  border-radius: 50px;
+  color: #000;
+  font-size: 16px;
+  padding: 10px 21px;
+}
+.btn {
+  background-color: #098fe0;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  padding: 4px 10px;
+}
+ul.songs {
+  list-style-type: none;
+  padding: 0;
+}
+ul.songs li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.container {
+  margin: 30px auto;
+  max-width: 100%;
+  width: 500px;
+}
+.container h2 {
+  font-weight: 300;
+}
+.container p {
+  text-align: center;
+  font-weight: bold;
+}
+.centered {
+  display: flex;
+  justify-content: center;
+}
+.centered-button {
+  margin: 15px;
+}
