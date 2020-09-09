@@ -1,0 +1,54 @@
+// LYRICS APP WITH BRAD 
+
+1.CREATE CONST apiURL = 'https://api.lyrics.ovh';
+2.CREATE EVENTS FROM HTML (getElementById)
+3.ADD EVENT LISTENERS ON SUBMIT
+(e.preventDefault() so it doesnt submit to file)
+const searchTerm = search.value.trim(); )
+4.CREATE searchSong() function so we can search song
+older way: 
+(we use fetch example: fetch(`${apiURL}/suggest/${term}`).then(res => res.json())
+.then(data => console.log(data))
+
+other way this same way simplier
+
+async function ...
+const res = await fetch(`${apiURL}/suggest/${term}`);
+const data = await res.json();
+
+5.WE CREATE SHOW DATA FUNCTION // show song and artist in DOM
+6.CREATE VARIABLE OUTPUT AND SET TO NOTHING,
+THEN LOOP TRUE EACH AND APPEND ON THE OUTPUT IN BACTICS
+IT BE LIST ITEM OF <li></li> and <span></span>
+inside template literate to update DOM.
+under we will have button to get lyrics.
+
+otuside function we can add result.innerHTML with <ul> and ${output}
+
+other way we can do it with map directly say that to ul inside template literate
+data.data.map for each song <li>, and were it ends just add .join('') to join items
+
+7.SEE MORE PAGES AND CREATE NEXT AND PREVIOUS
+
+so under result we do if else statement and turn it into HTML
+
+8.THEN CREATE FUNCTION TO GET MORE SONGS
+we async function and fetch url and show data get prev and next songs
+
+9.CORS ERROR SHOWS UP SO WE CAN FIX IT WITH PROXY AND HEROKU  AND ALL WE HAVE TO DO
+IS ADD https//cors-anywhere.herokuapp.com/${url}; inside of fetch
+
+10.GET LYRICS BUTTON TO WORK WE NEED TO ADD EVENTLISTENER
+
+result.addEventListener('click'..............
+and if (clickedEl.tagName === "BUTTON") 
+
+11.GET LYRICS FOR SONG WE AGAIN DO ASYNC FUNCTION TO GET LYRICS
+SO WE FETCH AGAIN BUT THIS TIME WE DONT NEED CORS, AND WE WANT TO FETCH FROM 
+apiURL the main we defined.
+
+12.WE USE REGULAR EXPRESSION TO GET DATA.LYRICS.REPLACE(/()/||... ANYWAY SOMETHING LIKE THAT IS REGULAR EXPRESSION
+AND IF FIND SOMETHING WE WANT TO HAVE LINE BREAK WITH <BR>
+
+13.NOW WE INSERT IT IN DOM AND SET RESULT.INNERHTML H2 - ARTIST, SONG TITLE
+SPAN inside will be lyrics
